@@ -3,7 +3,7 @@
 is a simple logger for your project.
 
 ## Installation
-```npm install --save justlogger```
+```npm install --save @wendor/justlogger```
 
 ## Usage
 Example [_example.js_](./example.js):
