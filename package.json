@@ -1,0 +1,29 @@
+{
+  "name": "justlogger",
+  "main": "example.js",
+  "version": "1.0.0",
+  "description": "is a simple logger for your project.",
+  "keywords": [],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "author": {
+    "name": "Anton Solomonov",
+    "email": "weny@bk.ru"
+  },
+  "homepage": "https://github.com/wendor/justlogger",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wendor/justlogger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wendor/justlogger/issues"
+  },
+  "dependencies": {
+    "moment": "*"
+  },
+  "scripts": {
+    "start": "node example.js"
+  },
+  "license": "GPL-3.0"
+}
