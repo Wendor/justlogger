@@ -1,7 +1,7 @@
 {
   "name": "@wendor/justlogger",
   "main": "example.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "is a simple logger for your project.",
   "keywords": [],
   "engines": {

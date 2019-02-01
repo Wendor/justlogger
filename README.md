@@ -8,7 +8,7 @@ is a simple logger for your project.
 ## Usage
 Example [_example.js_](./example.js):
 ```javascript
-const log = require('./libs/logger')('MAIN', {
+const log = require('@wendor/justlogger')('MAIN', {
     colors: true,
     timestamp: true,
     level: 5,
