@@ -41,7 +41,7 @@ class Logger {
       c.enable(false);
     }
 
-    if(this.opts.enable_file) {
+    if(this.options.enable_file) {
       const logDir = path.dirname(this.options.filename);
       if (!fs.existsSync(logDir)){
         fs.mkdirSync(logDir);
@@ -78,7 +78,7 @@ class Logger {
     let prefix = parts.join(" ");
     let suffix = Logger._executionTime();
 
-    if(this.opts.enable_file) {
+    if(this.options.enable_file) {
       this.fileStream.write(timestamp + " " + prefix + " " + message + " " + suffix + "\n");
     }
 
