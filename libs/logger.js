@@ -21,7 +21,7 @@ const defaultOptions = {
   timestamp: true,
   level: 5,
   inspectDepth: 5,
-  enable_file: !!process.env.LOG_OFF,
+  enable_file: !process.env.LOG_OFF,
   filename: appDir+"/logs/output.log"
 };
 
