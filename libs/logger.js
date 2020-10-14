@@ -21,6 +21,7 @@ const defaultOptions = {
   timestamp: true,
   level: 5,
   inspectDepth: 5,
+  enable_file: !!process.env.LOG_OFF,
   filename: appDir+"/logs/output.log"
 };
 
@@ -36,16 +37,18 @@ class Logger {
     Object.assign(opts, options);
     this.options = opts;
 
-    const logDir = path.dirname(this.options.filename);
-    if (!fs.existsSync(logDir)){
-      fs.mkdirSync(logDir);
-    }
-
     if(!this.options.colors) {
       c.enable(false);
     }
 
-    this.fileStream = fs.createWriteStream(this.options.filename, {flags:"a"});
+    if(this.opts.enable_file) {
+      const logDir = path.dirname(this.options.filename);
+      if (!fs.existsSync(logDir)){
+        fs.mkdirSync(logDir);
+      }
+      this.fileStream = fs.createWriteStream(this.options.filename, {flags:"a"});
+    }
+
 
     let what = this;
     Object.keys(levels).forEach(lvl => {
@@ -75,7 +78,9 @@ class Logger {
     let prefix = parts.join(" ");
     let suffix = Logger._executionTime();
 
-    this.fileStream.write(timestamp + " " + prefix + " " + message + " " + suffix + "\n");
+    if(this.opts.enable_file) {
+      this.fileStream.write(timestamp + " " + prefix + " " + message + " " + suffix + "\n");
+    }
 
     if(this.options.colors) {
       prefix = c(prefix).color(color);
